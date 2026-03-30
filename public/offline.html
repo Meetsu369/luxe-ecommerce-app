@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>LUXE Store — Offline</title>
+  <style>
+    :root {
+      --bg: #0a0a0a; --surface: #141414; --accent: #c9a96e;
+      --text: #f0ede8; --muted: #888; --border: #2a2a2a;
+    }
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      background: var(--bg); color: var(--text);
+      font-family: 'DM Sans', system-ui, sans-serif;
+      min-height: 100vh; display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      text-align: center; padding: 2rem;
+    }
+    .icon { font-size: 4rem; margin-bottom: 1.5rem; opacity: 0.5; }
+    h1 {
+      font-family: Georgia, serif; font-size: clamp(1.75rem, 4vw, 2.5rem);
+      color: var(--accent); margin-bottom: 1rem;
+    }
+    p { color: var(--muted); line-height: 1.75; max-width: 400px; margin-bottom: 2rem; }
+    button {
+      background: var(--accent); color: #0a0a0a; border: none;
+      padding: 0.75rem 2rem; border-radius: 2px;
+      font-size: 0.82rem; font-weight: 600; letter-spacing: 0.1em;
+      text-transform: uppercase; cursor: pointer;
+    }
+    button:hover { opacity: 0.85; }
+    .badge {
+      display: inline-block; margin-top: 2rem;
+      background: var(--surface); border: 1px solid var(--border);
+      padding: 0.4rem 1rem; border-radius: 2px;
+      font-size: 0.7rem; letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--muted);
+    }
+  </style>
+</head>
+<body>
+  <div class="icon">📡</div>
+  <h1>You're Offline</h1>
+  <p>
+    It looks like you've lost your internet connection.
+    Please check your network and try again.
+    Previously visited pages are still available from cache.
+  </p>
+  <button onclick="window.location.reload()">Try Again</button>
+  <div class="badge">PWA — Cache-First Service Worker Active</div>
+</body>
+</html>
